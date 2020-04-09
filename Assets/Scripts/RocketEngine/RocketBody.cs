@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RocketBody : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float mass;
+    public Vector3 currentVelocity;
+    public Vector3 netForce;
+    private Vector3 acc;
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.position = acc;
+    }
+    public void AddForce(Vector3 force)
+    {
+        acc = force / mass;
+        currentVelocity += acc;
     }
 }

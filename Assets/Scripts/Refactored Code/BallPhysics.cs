@@ -34,7 +34,7 @@ public class BallPhysics : MonoBehaviour
         {
             DrawLine();
         }
-        transform.position += netForce;
+        transform.position += ballVelocity;
     }
 
     void AddForce()
