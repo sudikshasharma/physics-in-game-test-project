@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 2019265744}
   - component: {fileID: 2019265743}
   - component: {fileID: 2019265742}
+  - component: {fileID: 2019265745}
   - component: {fileID: 2019265741}
   - component: {fileID: 2019265740}
   m_Layer: 0
@@ -320,10 +321,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
-  netForce: {x: 1, y: 0, z: 0}
-  forceList:
+  netForce: {x: 0, y: 0, z: 0}
+  mass: 10
+  forceVectorList:
   - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!135 &2019265741
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -396,3 +398,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2019265745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019265739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6db481a40583471792bc96a4c9bc12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showTrails: 1

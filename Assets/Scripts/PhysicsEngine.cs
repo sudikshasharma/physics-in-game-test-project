@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhysicsEngine : MonoBehaviour
 {
     public Vector3 ballVelocity;
     public Vector3 netForce;
-    public List<Vector3> forceList = new List<Vector3>();
+    public float mass = 10f;
+    public List<Vector3> forceVectorList = new List<Vector3>();
 
     void FixedUpdate()
     {
@@ -17,15 +19,25 @@ public class PhysicsEngine : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Unbalanced net Force !");
+            Debug.Log("Unbalanced Net Force !");
+        }
+        if (SceneManager.GetActiveScene().name == "NewtonSecondLaw")
+        {
+            UpdateVelocity();
         }
     }
 
     void AddForce()
     {
-        foreach (var force in forceList)
+        foreach (var force in forceVectorList)
         {
             netForce += force;
         }
+    }
+
+    void UpdateVelocity()
+    {
+        Vector3 acceleration = netForce / mass;
+        ballVelocity += acceleration * Time.deltaTime;
     }
 }
