@@ -6,10 +6,10 @@ public class GravitationalForce : MonoBehaviour
 {
     private GravitationalForce[] objects;
     private LineRenderer lineR;
-    private Vector3 objSpeed;
     private Vector3 acc;
     private float bigG = 6.673e-11f;
     public Vector3 totalForce;
+    public Vector3 objSpeed;
     public float objectMass;
 
     void Start()
@@ -53,10 +53,11 @@ public class GravitationalForce : MonoBehaviour
         lineR.SetPosition(i + 1, force.normalized);
     }
 
-    void AddForce(Vector3 force)
+    public void AddForce(Vector3 force)
     {
         totalForce += force;
         acc = totalForce / objectMass;
+        Debug.Log(acc);
         objSpeed += acc;
     }
 }
