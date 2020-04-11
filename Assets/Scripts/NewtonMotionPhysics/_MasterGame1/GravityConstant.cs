@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class GravityConstant : MonoBehaviour
 {
     private float bigG = 6.67430e-11f;
     public ObjectBody[] objects;
-    void Start()
-    {
-        objects = GameObject.FindObjectsOfType<ObjectBody>();
-    }
-
     void FixedUpdate()
     {
+        FindObjects();
         CalculateGravity();
     }
 
+    void FindObjects()
+    {
+        objects = GameObject.FindObjectsOfType<ObjectBody>();
+    }
     void CalculateGravity()
     {
         foreach (var objectA in objects)

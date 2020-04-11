@@ -23,6 +23,5 @@ public class ObjectBody : MonoBehaviour
     public void AddForce(Vector3 force)
     {
         totalForce += force;
-
     }
 }

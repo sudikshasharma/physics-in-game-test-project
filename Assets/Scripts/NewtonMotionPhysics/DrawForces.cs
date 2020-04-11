@@ -1,9 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-
-// Version 1 of this simple component to draw lines representing force vectors
-// Think of them as rocket trails if you like
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(PhysicsEngine))]
@@ -15,7 +11,6 @@ public class DrawForces : MonoBehaviour
     private LineRenderer lineRenderer;
     private int numberOfForces;
 
-    // Use this for initialization
     void Start()
     {
         forceVectorList = GetComponent<PhysicsEngine>().forceVectorList;
@@ -27,7 +22,6 @@ public class DrawForces : MonoBehaviour
         lineRenderer.useWorldSpace = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (showTrails)
