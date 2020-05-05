@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(Rigidbody))]
 public class BasicRotation : MonoBehaviour
 {
     Rigidbody rigidbody1;
